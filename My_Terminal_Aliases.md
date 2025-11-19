@@ -1,5 +1,9 @@
 # Terminal Aliases
 
+Here I have assembled a list of aliases that I find useful and include on all of my GNU/Linux PCs and servers. See the guide, [Defining Terminal Aliases](Defining_Terminal_Aliases.md) for instructions on how to use these aliases on your own distribution.
+
+## Universal Shortcuts
+
     alias c='clear'
     alias s='sudo'
 
@@ -88,7 +92,7 @@
     alias lla='ls -la'
     alias l='ls -CF'
 
-# git shortcuts
+## git shortcuts
 
     alias ga='git add'
     alias gp='git push'
