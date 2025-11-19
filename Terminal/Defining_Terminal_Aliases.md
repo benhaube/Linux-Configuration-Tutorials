@@ -8,10 +8,8 @@ When operating in a GNU/Linux terminal environment, aliases are an indispensable
 
     + Open a terminal window and execute the following command:
 
-            ```
             cp .bashrc .bashrc.bkp 
-            ```
-
+            
 2. Check your `.bashrc` file to make sure it includes the following code:
 
         # Alias definitions.
@@ -25,9 +23,8 @@ When operating in a GNU/Linux terminal environment, aliases are an indispensable
 
     + Your **Debian/Ubuntu** based distribution should have this code in the `.bashrc` file by default, but in case it doesn't you can open the file in the text editor of your choice (*e.g., nano*) and paste it into the end of the file. 
 
-            ```
             nano .bashrc
-            ```
+
         + `Ctrl+O` to save the changes
         + `Ctrl+X` to exit 
 
@@ -47,7 +44,6 @@ When operating in a GNU/Linux terminal environment, aliases are an indispensable
 
     + Open a terminal window and execute the following command:
 
-            ```
             cp .bashrc .bashrc.bkp 
 
 2. Check your `.bashrc` file to make sure it includes the following code:
@@ -64,9 +60,8 @@ When operating in a GNU/Linux terminal environment, aliases are an indispensable
 
     + Your **Fedora/RHEL** based distribution should have this code in the `.bashrc` file by default, but in case it doesn't you can open the file in the text editor of your choice (*e.g., nano*) and paste it into the end of the file. 
 
-            ```
             nano .bashrc
-            ```
+
         + `Ctrl+O` to save the changes
         + `Ctrl+X` to exit 
 
