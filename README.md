@@ -7,4 +7,4 @@ This is a guide I have written up to setup LUKS volume decryption with the onboa
 
 ### Setup SSH Login Email Notification
 This is a guide I have written to setup an automatic email notification when a new SSH session is successfully started on your headless Linux server. 
-+ See [Setup SSH Login Email Notification](Setup_SSH_Login_Email_Notification.md)
++ See [Setup SSH Login Email Notification](Setup_SSH_Login_Email_Notification.md) for detailed instructions.
