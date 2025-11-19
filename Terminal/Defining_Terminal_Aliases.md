@@ -78,7 +78,7 @@ When operating in a GNU/Linux terminal environment, aliases are an indispensable
         cd ~/.bashrc.d
         nano aliases
 
-    + I prefer to put `#!/bin/bash` on the first line of the file. This is not strictly necessary, but it tells your text editor to use proper syntax highlighting for Bash if it is available. I find syntax highlighting useful, but if you don't it is okay to leave this out. 
+    + ***Note***: I prefer to put `#!/bin/bash` on the first line of the file. This is not strictly necessary, but it tells your text editor to use proper syntax highlighting for Bash if it is available. I find syntax highlighting useful, but if you don't it is okay to leave this out. 
 
 5. Paste or type in your desired aliases, then `Ctrl+O` to save the changes and `Ctrl+X` to exit nano.
 
