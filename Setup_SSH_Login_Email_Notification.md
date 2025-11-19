@@ -1,5 +1,4 @@
 # Setup SSH Login Notification
----
 
 ## Install Required Packages
 In order to send email notifications from a headless server we need to install the required packages. The `msmtp` package is a lightweight CLI utility for sending email using SMTP.
