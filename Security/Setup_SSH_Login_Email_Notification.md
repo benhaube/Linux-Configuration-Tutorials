@@ -116,10 +116,10 @@ Finally, it is time to create the shell script. The shell script is vital. It is
         HOST=$(hostname)
         DATE=$(date)
         RECIPIENT="example@example.com"
-        SUBJECT="SSH Login on $HOST"
+        SUBJECT="New SSH Session Started on [$HOST]"
 
         BODY="
-        A new SSH login was successfully established.
+        A new SSH session was successfully established.
 
         User:          ${USER}
         User IP Host:  ${IP}
