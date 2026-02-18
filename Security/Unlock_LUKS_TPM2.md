@@ -6,7 +6,7 @@ Unlocking your LUKS volume with a Trusted Platform Module 2.0 *(TPM2)* provides 
 **TPM2 Chip:** Your computer must have an active **TPM2** chip. Most modern hardware does, but you may need to enable in **UEFI** settings.  <br>
 **LUKS2:** Your encrypted volume must be using **LUKS2** format. 
 
->[!Note] Note
+> Note:
 > You can check this with the following command:
 > ```bash
 > cryptsetup luksDump /dev/your_device
@@ -62,7 +62,7 @@ Unlocking your LUKS volume with a Trusted Platform Module 2.0 *(TPM2)* provides 
     ```
 
 4. **Configure Grub:**
-> [!Warning] Warning:
+> Warning:
 > If your encrypted volume contains the **root filesystem**, you will need to add this option to the **kernel command line** in your bootloader configuration file.
 
 + Open `/etc/default/grub` with a text editor as a superuser. (e.g., using `nano` or `vim`)
@@ -86,7 +86,7 @@ sudo nano /etc/default/grub
      GRUB_CMDLINE_LINUX="quiet splash rd.luks.options=tpm2-device=auto"
      ```
      
-     > [!Note] Note
+     > Note:
      > Some distributions may require a separate option for the UUID, such as `rd.luks.options=UUID-OF-YOUR-LUKS-PARTITION=tpm2-device=auto`. Check your distribution's documentation for the exact syntax if the simpler option above doesn't work. I needed to use this syntax on Fedora 42.
 
  + **Save and close** the `/etc/default/grub` file.
@@ -123,7 +123,7 @@ sudo nano /etc/default/grub
            
 ## Important Notes
 
-> [!caution] Backup Key:
+> Backup Key:
 > Always keep at least one regular passphrase or a **recovery key** for your LUKS volume as a backup. If the TPM fails, the UEFI is updated, or your boot configuration changes in a way that alters the PCR values, the TPM will not release the key.
 > 
 > To enroll a recovery key: 
@@ -131,7 +131,7 @@ sudo nano /etc/default/grub
 > sudo systemd-cryptenroll --recovery-key /dev/your_device
 > ```
 
-> [!caution] Security:
+> Security:
 > This method trades a bit of security for convenience. If an attacker can physically access your machine and modify the non-encrypted boot partition (but not the sealed PCRs), certain ["Evil Maid" attacks](https://en.wikipedia.org/wiki/Evil_maid_attack) might be possible.
 > 
 > Using a **TPM PIN** in addition to the PCRs can mitigate some of these risks. This can be done by using the flag `--tpm2-with-pin=yes` with the enrollment command.
@@ -141,7 +141,7 @@ sudo nano /etc/default/grub
 > sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+4+7+11 --tpm2-with-pin=yes /dev/your_device
 > ```
 
-> [!Tip] Wiping the slot:
+> Wiping the slot:
 > If you update your firmware, kernel, or bootloader and the automatic unlock stops working, you will need to use your backup passphrase and then wipe and re-enroll the TPM key. 
 > 
 > ```bash
@@ -151,4 +151,3 @@ sudo nano /etc/default/grub
 > ```
 > 
 > If you are using a system that uses `dracut` to rebuild the initramfs you can automate this process with a script I have written. It is available to download in [this Github repo](https://github.com/benhaube/Update-LUKS-PCRs-script).
-    
